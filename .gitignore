@@ -22,6 +22,7 @@
 
 .byebug_history
 
+
 # Extra files to ignore
 doc/
 *.swp
