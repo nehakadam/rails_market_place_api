@@ -3,7 +3,7 @@ require 'spec_helper'
 
 RSpec.describe Api::V1::UsersController, type: :controller do
 
-	before(:each) { request.headers['Accept'] = "application/vnd.marketplaceapi.v1" }
+	#before(:each) { request.headers['Accept'] = "application/vnd.marketplaceapi.v1" }
 
 
   describe "GET #show" do
@@ -106,6 +106,22 @@ RSpec.describe Api::V1::UsersController, type: :controller do
 	  end
 
 	  it { should respond_with 204 }
+
+	end
+
+
+
+	describe "Background Test" do
+
+		before(:each) do
+      @user = FactoryBot.create :user
+      get :show, params: { id: @user.id }, format: :json
+    end
+
+		it "returns the information about a reporter on a hash" do
+		  user_response = json_response # this is the updated line
+		  expect(user_response[:email]).to eql @user.email
+		end
 
 	end
 
