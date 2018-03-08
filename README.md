@@ -22,3 +22,16 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+
+Test Commands
+
+curl -H 'Accept: application/vnd.marketplaceapi.v1' http://api.marketplaceapi.test/users/1
+
+bundle exec rspec spec/controllers/api/v1/users_controller_spec.rb
+
+bundle exec rspec lib/spec/api_constraints_spec.rb
+
+bundle exec rspec spec/models/user_spec.rb
+
