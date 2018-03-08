@@ -35,3 +35,5 @@ bundle exec rspec lib/spec/api_constraints_spec.rb
 
 bundle exec rspec spec/models/user_spec.rb
 
+bundle exec rspec spec/controllers/api/v1/sessions_controller_spec.rb
+
