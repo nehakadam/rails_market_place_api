@@ -39,3 +39,7 @@ bundle exec rspec spec/controllers/api/v1/sessions_controller_spec.rb
 
 bundle exec rspec spec/controllers/concerns/authenticable_spec.rb
 
+bundle exec rspec spec/models/product_spec.rb
+
+bundle exec rspec spec/
+
