@@ -68,7 +68,7 @@ RSpec.configure do |config|
 
   config.include Request::HeadersHelpers, type: :controller
 
-  config.include Devise::TestHelpers, :type => :controller
+  config.include Devise::Test::ControllerHelpers, :type => :controller
 
 
   config.before(:each, type: :controller) do
