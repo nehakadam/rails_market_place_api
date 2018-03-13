@@ -13,7 +13,8 @@ describe Authenticable do
     before do
       @user = FactoryBot.create :user
       request.headers["Authorization"] = @user.auth_token
-      authentication.stub(:request).and_return(request)
+      #authentication.stub(:request).and_return(request)
+      allow(authentication).to receive(:request).and_return(request)
     end
     it "returns the user from the authorization header" do
       expect(authentication.current_user.auth_token).to eql @user.auth_token
@@ -24,10 +25,17 @@ describe Authenticable do
   describe "#authenticate_with_token" do
     before do
       @user = FactoryBot.create :user
-      authentication.stub(:current_user).and_return(nil)
-      response.stub(:response_code).and_return(401)
-      response.stub(:body).and_return({"errors" => "Not authenticated"}.to_json)
-      authentication.stub(:response).and_return(response)
+
+      # Deprecated stub syntax
+      # authentication.stub(:current_user).and_return(nil)
+      # response.stub(:response_code).and_return(401)
+      # response.stub(:body).and_return({"errors" => "Not authenticated"}.to_json)
+      # authentication.stub(:response).and_return(response)
+
+      allow(authentication).to receive(:current_user).and_return(nil)
+      allow(response).to receive(:response_code).and_return(401)
+      allow(response).to receive(:body).and_return({"errors" => "Not authenticated"}.to_json)
+      allow(authentication).to receive(:response).and_return(response)
     end
 
     it "render a json error message" do
@@ -43,7 +51,8 @@ describe Authenticable do
     context "when there is a user on 'session'" do
       before do
         @user = FactoryBot.create :user
-        authentication.stub(:current_user).and_return(@user)
+        # authentication.stub(:current_user).and_return(@user)
+        allow(authentication).to receive(:current_user).and_return(@user)
       end
 
       it { should be_user_signed_in }
@@ -52,7 +61,8 @@ describe Authenticable do
     context "when there is no user on 'session'" do
       before do
         @user = FactoryBot.create :user
-        authentication.stub(:current_user).and_return(nil)
+        #authentication.stub(:current_user).and_return(nil)  # Deprecated Stub syntax
+        allow(authentication).to receive(:current_user).and_return(nil)
       end
 
       it { should_not be_user_signed_in }
