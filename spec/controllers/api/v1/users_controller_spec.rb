@@ -13,8 +13,14 @@ RSpec.describe Api::V1::UsersController, type: :controller do
     end
 
     it "returns the information about a reporter on a hash" do
-      user_response = JSON.parse(response.body, symbolize_names: true)
+      #user_response = JSON.parse(response.body, symbolize_names: true)
+      user_response = json_response
       expect(user_response[:email]).to eql @user.email
+    end
+
+    it "has the product ids as an embeded object" do
+      user_response = json_response
+      expect(user_response[:product_ids]).to eql []
     end
 
     it { should respond_with 200 }
@@ -127,6 +133,9 @@ RSpec.describe Api::V1::UsersController, type: :controller do
 		end
 
 	end
+
+
+
 
 
 end

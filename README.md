@@ -45,3 +45,11 @@ bundle exec rspec spec/
 
 bundle exec rspec spec/controllers/api/v1/products_controller_spec.rb
 
+
+
+Test User
+
+Email : example@marketplace.com
+Password : 12345678
+Auth Token : sLfTud3L6zyyGwjCJ7Pq
+

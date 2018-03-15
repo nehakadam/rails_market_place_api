@@ -71,12 +71,18 @@ RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, :type => :controller
 
 
+  config.include(Shoulda::Matchers::ActionController, { type: :model, file_path: /spec\/controllers/})
+
+
   config.before(:each, type: :controller) do
     include_default_accept_headers
   end
   
 
 end
+
+
+
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
