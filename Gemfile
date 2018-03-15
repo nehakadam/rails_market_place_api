@@ -47,7 +47,6 @@ gem 'active_model_serializers'
 
 gem "devise"
 
-gem "responders"
 
 
 group :doc do
