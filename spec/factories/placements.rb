@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :placement do
-    order nil
-    product nil
+    order
+    product
+    quantity 1
   end
 end

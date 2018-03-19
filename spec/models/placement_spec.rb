@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe Placement, type: :model do
-	
+
   let(:placement) { FactoryBot.build :placement }
   subject { placement }
 
@@ -11,5 +11,13 @@ RSpec.describe Placement, type: :model do
 
   it { should belong_to :order }
   it { should belong_to :product }
+
+
+  describe "#decrement_product_quantity!" do
+    it "decreases the product quantity by the placement quantity" do
+      product = placement.product
+      expect{placement.decrement_product_quantity!}.to change{product.quantity}.by(-placement.quantity)
+    end
+  end
 
 end
