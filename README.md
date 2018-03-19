@@ -53,3 +53,11 @@ Email : example@marketplace.com
 Password : 12345678
 Auth Token : sLfTud3L6zyyGwjCJ7Pq
 
+
+bundle exec rspec spec/mailers/order_mailer_spec.rb
+
+bundle exec rspec spec/controllers/api/v1/orders_controller_spec.rb
+
+
+
+

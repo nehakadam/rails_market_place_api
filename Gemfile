@@ -56,6 +56,7 @@ end
 
 group :test do
   gem "rspec-rails"
+  gem "email_spec"
 end
 
 group :development, :test do
