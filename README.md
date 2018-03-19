@@ -58,6 +58,9 @@ bundle exec rspec spec/mailers/order_mailer_spec.rb
 
 bundle exec rspec spec/controllers/api/v1/orders_controller_spec.rb
 
+bundle exec rspec spec/models/order_spec.rb
+
+
 
 
 
