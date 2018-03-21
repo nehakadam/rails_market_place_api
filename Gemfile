@@ -47,6 +47,8 @@ gem 'active_model_serializers'
 
 gem "devise"
 
+gem 'kaminari'
+
 
 
 group :doc do
