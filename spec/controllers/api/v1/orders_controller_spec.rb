@@ -16,13 +16,8 @@ RSpec.describe Api::V1::OrdersController, type: :controller do
       expect(orders_response.length).to eq(4)
     end
 
-    # These lines are the ones added to test the pagination
-    it { expect(json_response).to have_key(:meta) }
-    it { expect(json_response[:meta]).to have_key(:pagination) }
-    it { expect(json_response[:meta][:pagination]).to have_key(:per_page) }
-    it { expect(json_response[:meta][:pagination]).to have_key(:total_pages) }
-    it { expect(json_response[:meta][:pagination]).to have_key(:total_objects) }
-
+    it_behaves_like "paginated list"
+    
     it { should respond_with 200 }
   end
 
