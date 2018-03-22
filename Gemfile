@@ -49,6 +49,10 @@ gem "devise"
 
 gem 'kaminari'
 
+gem 'delayed_job_active_record'
+
+gem 'loofah', '~> 2.2.1'
+
 
 
 group :doc do
