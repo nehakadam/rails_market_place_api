@@ -27,23 +27,23 @@ Things you may want to cover:
 
 Test Commands
 
-curl -H 'Accept: application/vnd.marketplaceapi.v1' http://api.marketplaceapi.test/users/1
+`curl -H 'Accept: application/vnd.marketplaceapi.v1' http://api.marketplaceapi.test/users/1`
 
-bundle exec rspec spec/controllers/api/v1/users_controller_spec.rb
+`bundle exec rspec spec/controllers/api/v1/users_controller_spec.rb`
 
-bundle exec rspec lib/spec/api_constraints_spec.rb
+`bundle exec rspec lib/spec/api_constraints_spec.rb`
 
 bundle exec rspec spec/models/user_spec.rb
 
-bundle exec rspec spec/controllers/api/v1/sessions_controller_spec.rb
+`bundle exec rspec spec/controllers/api/v1/sessions_controller_spec.rb`
 
-bundle exec rspec spec/controllers/concerns/authenticable_spec.rb
+`bundle exec rspec spec/controllers/concerns/authenticable_spec.rb`
 
-bundle exec rspec spec/models/product_spec.rb
+`bundle exec rspec spec/models/product_spec.rb`
 
-bundle exec rspec spec/
+`bundle exec rspec spec/`
 
-bundle exec rspec spec/controllers/api/v1/products_controller_spec.rb
+`bundle exec rspec spec/controllers/api/v1/products_controller_spec.rb`
 
 
 
@@ -62,5 +62,21 @@ bundle exec rspec spec/models/order_spec.rb
 
 
 
+Git Commands
+
+
+git checkout -b <branch_name>
+
+git add -A
+
+git commit -m <message>
+
+git push --set-upstream origin <branch_name>
+
+git checkout master
+
+git merge <branch_name>
+
+git push
 
 
